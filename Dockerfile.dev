@@ -1,0 +1,17 @@
+# Development Dockerfile (Dockerfile.dev)
+FROM gcc:latest
+
+# Install any development tools (e.g., gdb for debugging)
+RUN apt-get update && apt-get install -y gdb vim
+
+# Set working directory
+WORKDIR /usr/src/app
+
+# Copy source code
+COPY . .
+
+# Compile the C code
+RUN gcc -o http_server main.c
+
+# Run the compiled server
+CMD ["./http_server"]

@@ -1,0 +1,17 @@
+# Production Dockerfile (Dockerfile.prod)
+FROM gcc:latest
+
+# Set working directory
+WORKDIR /usr/src/app
+
+# Copy source code
+COPY . .
+
+# Compile the C code
+RUN gcc -o http_server main.c
+
+# Expose the port your HTTP server runs on
+EXPOSE 8080
+
+# Run the compiled server
+CMD ["./http_server"]
