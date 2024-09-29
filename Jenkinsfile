@@ -22,7 +22,7 @@ pipeline {
                     sh 'docker-compose up -d'
                     sleep(5) // Wait for the server to start
                     // Test the server response
-                    def response = sh(script: 'curl -s http://localhost:8080', returnStdout: true).trim()
+                    def response = sh(script: 'curl -s http://localhost:8081', returnStdout: true).trim()
                     if (response != 'Hello, World!') {
                         error "Unexpected response from server: ${response}"
                     }

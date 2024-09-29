@@ -11,7 +11,7 @@ COPY . .
 RUN gcc -o http_server main.c
 
 # Expose the port your HTTP server runs on
-EXPOSE 8080
+EXPOSE 8081
 
 # Run the compiled server
 CMD ["./http_server"]
