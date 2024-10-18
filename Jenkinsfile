@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('Clone Repository') {
             steps {
-                git credentialsId: '1001', url: 'https://github.com/KipkorirC/http_server.git'
+                git credentialsId: '1001', url: 'https://github.com/KipkorirC/http_server.git',  branch: 'main'
             }
         }
         stage('Build Docker Image') {
